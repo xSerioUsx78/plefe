@@ -1,0 +1,434 @@
+{% extends 'base.html' %}
+
+{% block style %}
+  <style>
+    .macbook-pro {
+      background-color: #000000;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .macbook-pro .overlap-group-wrapper {
+      background-color: #000000;
+      width: 1512px;
+      height: 982px;
+    }
+
+    .macbook-pro .overlap-group {
+      position: relative;
+      height: 982px;
+      {% comment %} background-image: url(./img/rectangle-1.svg); {% endcomment %}
+      background-size: 100% 100%;
+    }
+
+    .macbook-pro .rectangle {
+      position: absolute;
+      width: 1512px;
+      height: 982px;
+      top: 0;
+      left: 0;
+    }
+
+    .macbook-pro .element {
+      position: relative;
+      width: fit-content;
+      margin-top: -1px;
+      font-family: "Poppins-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .macbook-pro .div-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 2px 8px;
+      position: relative;
+      flex: 0 0 auto;
+      background-color: #000000;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .macbook-pro .text-wrapper {
+      position: relative;
+      width: fit-content;
+      margin-top: -1px;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #ffffff;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .macbook-pro .div {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 8px 23px;
+      top: 40px;
+      left: 348px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+
+
+    .macbook-pro .element-sma {
+      position: relative;
+      width: fit-content;
+      margin-top: -1px;
+      font-family: "Poppins-Bold", Helvetica;
+      font-weight: 700;
+      color: #000000;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .macbook-pro .group {
+      top: 224px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .text-wrapper-2 {
+      position: absolute;
+      top: 5px;
+      left: 15px;
+      font-family: "Poppins-Regular", Helvetica;
+      font-weight: 400;
+      color: #f2f2f2;
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: normal;
+    }
+
+    .macbook-pro .frame-8 {
+      display: inline-flex;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 6px 14px;
+      position: absolute;
+      top: 9px;
+      left: 159px;
+      background-color: #b2ffb1;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 2px 2px 3px #00000040, -2px -2px 3px #00000040;
+    }
+
+    .macbook-pro .text-wrapper-3 {
+      position: relative;
+      width: fit-content;
+      margin-top: -4.5px;
+      margin-bottom: -2.5px;
+      font-family: "Inter-Regular", Helvetica;
+      font-weight: 400;
+      color: #000000;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .macbook-pro .group-2 {
+      top: 224px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .frame-9 {
+      display: inline-flex;
+      height: 24px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 6px 14px;
+      position: absolute;
+      top: 9px;
+      left: 159px;
+      background-color: #ffb5b5;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 2px 2px 3px #00000040, -2px -2px 3px #00000030;
+    }
+
+    .macbook-pro .group-3 {
+      top: 286px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-4 {
+      top: 286px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-5 {
+      top: 348px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-6 {
+      top: 348px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-7 {
+      top: 472px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-8 {
+      top: 472px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-9 {
+      top: 410px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-10 {
+      top: 410px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-11 {
+      top: 534px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-12 {
+      top: 534px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-13 {
+      top: 596px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-14 {
+      top: 596px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-15 {
+      top: 658px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-16 {
+      top: 658px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-17 {
+      top: 720px;
+      left: 160px;
+      background-color: #b3ffb14a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .group-18 {
+      top: 720px;
+      left: 646px;
+      background-color: #ffb5b54a;
+      position: absolute;
+      width: 220px;
+      height: 42px;
+      border-radius: 10px;
+      box-shadow: inset -1px -1px 1px #00000080, inset 1px 1px 1px #ffffff4a;
+    }
+
+    .macbook-pro .text-wrapper-4 {
+      position: absolute;
+      top: 159px;
+      left: 242px;
+      font-family: "Inter-Medium", Helvetica;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+
+    .macbook-pro .text-wrapper-5 {
+      position: absolute;
+      top: 159px;
+      left: 721px;
+      font-family: "Inter-Medium", Helvetica;
+      font-weight: 500;
+      color: #ffffff;
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: normal;
+      white-space: nowrap;
+    }
+  </style>
+{% endblock style %}
+
+{% block content %}
+  {% comment %} <a class="group" href='{% url "long" time_frame="1M" %}'>
+    <div class="text-wrapper-2">1M</div>
+    <div class="frame-8"><div class="text-wrapper-3">15</div></div>
+  </a>
+  <a class="group-2" href='{% url "short" time_frame="1M" %}'>
+    <div class="text-wrapper-2">1M</div>
+    <div class="frame-9"><div class="text-wrapper-3">15</div></div>
+  </a> {% endcomment %}
+  <a class="group-3" href='{% url "long" time_frame="W" %}'>
+    <div class="text-wrapper-2">1W</div>
+    <div class="frame-8"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-4" href='{% url "short" time_frame="W" %}'>
+    <div class="text-wrapper-2">1W</div>
+    <div class="frame-9"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-5" href='{% url "long" time_frame="D" %}'>
+    <div class="text-wrapper-2">1D</div>
+    <div class="frame-8"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-6" href='{% url "short" time_frame="D" %}'>
+    <div class="text-wrapper-2">1D</div>
+    <div class="frame-9"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-11" href='{% url "long" time_frame="240" %}'>
+    <div class="text-wrapper-2">4H</div>
+    <div class="frame-8"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-12" href='{% url "short" time_frame="240" %}'>
+    <div class="text-wrapper-2">4H</div>
+    <div class="frame-9"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-13" href='{% url "long" time_frame="60" %}'>
+    <div class="text-wrapper-2">1H</div>
+    <div class="frame-8"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-14" href='{% url "short" time_frame="60" %}'>
+    <div class="text-wrapper-2">1H</div>
+    <div class="frame-9"><div class="text-wrapper-3">0</div></div>
+  </a>
+  {% comment %} <a class="group-13" href='{% url "long" time_frame="1" %}'>
+    <div class="text-wrapper-2">1m</div>
+    <div class="frame-8"><div class="text-wrapper-3">0</div></div>
+  </a>
+  <a class="group-14" href='{% url "short" time_frame="1" %}'>
+    <div class="text-wrapper-2">1m</div>
+    <div class="frame-9"><div class="text-wrapper-3">0</div></div>
+  </a> {% endcomment %}
+  <div class="text-wrapper-4">LONG</div>
+  <div class="text-wrapper-5">SHORT</div>
+{% endblock content %}

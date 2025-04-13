@@ -1,0 +1,70 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    image: imweird/plefe-gunicorn
+    container_name: plefe_gunicorn_container
+    command: sh -c "python manage.py collectstatic --noinput && python manage.py wait_for_db && python manage.py migrate && python manage.py createsuperadmin && python manage.py initiatesymbols && gunicorn --workers 1 --bind 0.0.0.0:8000 core.wsgi:application"
+    restart: always
+    ports:
+      - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+  nginx:
+    image: nginx:alpine
+    container_name: plefe_nginx_container
+    ports:
+      - "80:80"
+    volumes:
+      - ./staticfiles:/app/staticfiles
+      - ./nginx/plefe:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+  db:
+    image: postgres
+    container_name: plefe_postgresql_container
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - 5432:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+  celery:
+    build: .
+    image: imweird/plefe-celery
+    container_name: plefe_celery_container
+    env_file:
+      - .env
+    command: celery -A core.celery_app worker -l info
+    restart: always
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+  celery_beat:
+    build: .
+    image: imweird/plefe-celery-beat
+    container_name: plefe_celery_beat_container
+    env_file:
+      - .env
+    command: celery -A core.celery_app beat -l info
+    restart: always
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+  redis:
+    image: redis
+    container_name: plefe_redis_container
+    ports:
+      - 6379:6379
+    restart: always

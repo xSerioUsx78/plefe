@@ -1,0 +1,6 @@
+# Enter container shell
+docker exec -it plefe_gunicorn_container bash
+python manage.py migrate
+python manage.py shell
+from exchange_app.tasks import get_symbols_task
+get_symbols_task.delay()

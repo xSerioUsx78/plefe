@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="globals.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="macbook-pro">
+            <div class="overlap-group-wrapper">
+                <div class="overlap-group">
+                    <img class="rectangle" src="img/rectangle-1.svg" />
+                    <img class="img" src="img/rectangle-2.svg" />
+                    <div class="frame">
+                        <div class="element">7&amp;25 Cross</div>
+                        <div class="div-wrapper"><div class="text-wrapper">14</div></div>
+                    </div>
+                    <div class="div">
+                        <div class="element">50&amp;200 Cross</div>
+                        <div class="div-wrapper"><div class="text-wrapper">14</div></div>
+                    </div>
+                    <div class="frame-2">
+                        <div class="element">50&amp;200 Pullback</div>
+                        <div class="div-wrapper"><div class="text-wrapper">14</div></div>
+                    </div>
+                    <div class="frame-3">
+                        <div class="element-sma">Engulfing</div>
+                        <div class="frame-4"><div class="text-wrapper">14</div></div>
+                    </div>
+                    <div class="frame-5">
+                        <div class="element">Volume</div>
+                        <div class="div-wrapper"><div class="text-wrapper">14</div></div>
+                    </div>
+                    <div class="frame-6">
+                        <div class="element">UI</div>
+                        <div class="div-wrapper"><div class="text-wrapper">14</div></div>
+                    </div>
+                    <div class="frame-7">
+                        <div class="component">
+                            <div class="exchange-wrapper"><div class="text-wrapper-2">Binance</div></div>
+                            <div class="frame-8"><div class="text-wrapper-2">30m</div></div>
+                            <div class="frame-9"><div class="text-wrapper-2">4D</div></div>
+                            <img class="frame-10" src="img/frame-78.svg" />
+                            <div class="frame-11"><div class="text-wrapper-2">BTCUSDT</div></div>
+                        </div>
+                        <div class="component-2">
+                            <div class="frame-12"><div class="text-wrapper-2">Binance</div></div>
+                            <div class="frame-13"><div class="text-wrapper-2">30m</div></div>
+                            <div class="frame-14"><div class="text-wrapper-2">4D</div></div>
+                            <img class="frame-10" src="img/image.svg" />
+                            <div class="frame-15"><div class="text-wrapper-2">BTCUSDT</div></div>
+                        </div>
+                        <div class="component-3">
+                            <div class="frame-16"><div class="text-wrapper-2">Exchange</div></div>
+                            <div class="frame-17"><div class="text-wrapper-2">Passed Time</div></div>
+                            <div class="frame-18"><div class="text-wrapper-2">First Signal</div></div>
+                            <div class="frame-19"><div class="text-wrapper-2">Last 7 Days</div></div>
+                            <div class="frame-20"><div class="text-wrapper-2">Name</div></div>
+                        </div>
+                        <div class="long"><div class="text-wrapper-3">Long - 1M</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
